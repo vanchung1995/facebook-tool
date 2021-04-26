@@ -14,6 +14,8 @@ https://developers.facebook.com/tools/debug/accesstoken/
 (1) : copy token để kiểm tra.
 (2) : xem đã full quyền hay chưa.
 
-Reference: https://ahachat.com/help/blog/cach-lay-token-facebook
+Reference: 
+- https://ahachat.com/help/blog/cach-lay-token-facebook
+- https://developers.facebook.com/blog/post/2013/04/03/new-apis-for-comment-replies/
 
 Copy token ở bước 3. Vào terminal gõ `export FB_TOKEN=<token ở bước 3>`
