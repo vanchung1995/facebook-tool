@@ -1,7 +1,9 @@
 import requests
 class PostComment:
-    def __init__(self, user_access_token):
+    def __init__(self, user_access_token = None, page_token = None, page_id = None):
         self.user_access_token = user_access_token
+        self.page_token = page_token
+        self.page_id = page_id
 
     def get_page_token(self, page_id):
         end_point = f"https://graph.facebook.com/{page_id}"
@@ -19,8 +21,11 @@ class PostComment:
     def get_comments(self, post_id):
         host = "https://graph.facebook.com"
         end_point = f"{host}/{post_id}/comments"
+
+        if self.page_token is None:
+            self.page_token = self.get_page_token(self.page_id)
         params = {
-            "access_token": self.user_access_token,
+            "access_token": self.page_token,
             "limit":2000
         }
         response = requests.get(end_point, params=params)
